@@ -1,5 +1,5 @@
 {
-  "name": "log-wizard",
+	"name": "log-wizard",
 	"displayName": "log-wizard",
 	"description": "",
 	"version": "0.0.1",
@@ -10,16 +10,35 @@
 		"Other"
 	],
 	"activationEvents": [
-        "onCommand:log-wizard.helloWorld"
+		"onCommand:log-wizard.cleanLog"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "log-wizard.helloWorld",
-				"title": "Hello World"
+				"command": "log-wizard.cleanLog",
+				"title": "Log-wizard: Clean Log"
 			}
-		]
+		],
+		"configuration": {
+			"title": "log-wizard",
+			"properties": {
+				"log-wizard.pattern": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					},
+					"default": [
+						"\\[PFX: .+:.\\]",
+						"\\s[A-Z]{3} (INFO|ERROR|WARN)\\s",
+						"^[0-9]{4}\\/[0-9]{2}\\/[0-9]{2}",
+						"acs:[^\\s]+\\s"
+					],
+					"scope": "window",
+					"description": "Pattern that will be removed in each line"
+				}
+			}
+		}
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
