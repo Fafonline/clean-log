@@ -4,7 +4,7 @@ CLean you log line to keep only valuable information!
 
 ## Features
 Use the command palette with 'clean-log'
-![Command](image/command.png)
+![Command](images/command.png)
 
 ## Requirements
 
@@ -14,7 +14,7 @@ None
 
 You can define regular pattern to be removed from your logs
 
-![Configuration](image/configuration.png)
+![Configuration](images/configuration.png)
 
 
 ## Release Notes
